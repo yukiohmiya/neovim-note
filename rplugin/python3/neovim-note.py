@@ -3,7 +3,7 @@ import datetime
 
 
 @neovim.plugin
-class MemoPlugin(object):
+class NotePlugin(object):
     notes_dir = '~/Documents/notes/'
     dt = datetime.date.today()
     today_notes = '{}{}-{}-{}.md'.format(notes_dir, dt.year, dt.month, dt.day)
@@ -12,8 +12,8 @@ class MemoPlugin(object):
         self.nvim = nvim
         self.toggle = False
 
-    @neovim.command("Memo", range='', nargs='*')
-    def memo(self, args, range):
+    @neovim.command("Note", range='', nargs='*')
+    def note(self, args, range):
         if self.toggle:
             self.nvim.command('wincmd b')
             self.nvim.command('wq')
