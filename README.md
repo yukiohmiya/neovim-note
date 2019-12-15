@@ -2,12 +2,25 @@
 simple note plugin for Neovim.
 
 ## Features
+None
 
 ## Installation
 If you use vim-plug or Vundle, Add folloing line in your init.vim
 
 ```vim
 Plug 'yukiohmiya/neovim-note'
+```
+
+Install Plugin.
+
+```vim
+:PlugInstall
+```
+
+register NeoVim plugin
+
+```vim
+:UpdateRemotePlugins
 ```
 
 ## Setup
