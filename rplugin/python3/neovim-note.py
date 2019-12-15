@@ -19,6 +19,5 @@ class NotePlugin(object):
             self.nvim.command('wq')
         else:
             self.nvim.command('setlocal splitright')
-            self.nvim.command('setlocal columns=100')
             self.nvim.command('vnew {}'.format(self.today_notes))
         self.toggle = ~self.toggle
