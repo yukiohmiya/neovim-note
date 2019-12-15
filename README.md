@@ -5,6 +5,7 @@ simple note plugin for Neovim.
 
 ## Installation
 If you use vim-plug or Vundle, Add folloing line in your init.vim
+
 '''
 Plug 'yukiohmiya/neovim-note'
 '''
@@ -14,6 +15,7 @@ None
 
 ## Commands
 You only use following command.
+
 '''
 :Note
 '''
