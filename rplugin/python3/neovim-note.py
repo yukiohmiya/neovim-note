@@ -5,11 +5,12 @@ import os
 
 @neovim.plugin
 class NotePlugin(object):
-    notes_dir = '~/Documents/notes'
 
     def __init__(self, nvim):
         self.nvim = nvim
         self.toggle = False
+        if 'notes_dir' in self.nvim.vars:
+            self.notes_dir = self.nvim.vars['notes_dir']
 
     @neovim.command("Note", range='', nargs='*')
     def note(self, args, range):
@@ -25,5 +26,5 @@ class NotePlugin(object):
             self.nvim.command('setlocal splitright')
             self.nvim.command('vnew {}'.format(todays_note))
             if not os.path.isfile(todays_note):
-                self.nvim.current.line = ('# {}-{}-{}'.format(dt.year, dt.month, dt.day))
+                self.nvim.current.line = (todays_note)
         self.toggle = ~self.toggle
