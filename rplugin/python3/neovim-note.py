@@ -5,8 +5,6 @@ import datetime
 @neovim.plugin
 class NotePlugin(object):
     notes_dir = '~/Documents/notes/'
-    dt = datetime.date.today()
-    today_notes = '{}{}-{}-{}.md'.format(notes_dir, dt.year, dt.month, dt.day)
 
     def __init__(self, nvim):
         self.nvim = nvim
@@ -18,6 +16,8 @@ class NotePlugin(object):
             self.nvim.command('wincmd b')
             self.nvim.command('wq')
         else:
+            dt = datetime.date.today()
+            today_notes = '{}{}-{}-{}.md'.format(self.notes_dir, dt.year, dt.month, dt.day)
             self.nvim.command('setlocal splitright')
-            self.nvim.command('vnew {}'.format(self.today_notes))
+            self.nvim.command('vnew {}'.format(today_notes))
         self.toggle = ~self.toggle
