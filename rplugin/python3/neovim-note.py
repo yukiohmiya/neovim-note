@@ -26,5 +26,5 @@ class NotePlugin(object):
             self.nvim.command('setlocal splitright')
             self.nvim.command('vnew {}'.format(todays_note))
             if not os.path.isfile(todays_note):
-                self.nvim.current.line = (todays_note)
+                self.nvim.current.line = ('# {}-{}-{}'.format(dt.year, dt.month, dt.day))
         self.toggle = ~self.toggle
