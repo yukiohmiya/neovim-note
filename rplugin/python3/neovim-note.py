@@ -57,7 +57,7 @@ class NotePlugin(object):
             dt = datetime.date.today()
             todays_note = '{}/{}-{}-{}.md'.format(self.notes_dir, dt.year, dt.month, dt.day)
             self.nvim.command('setlocal splitright')
-            self.nvim.command('vsplit')
+            self.nvim.command('vertical botright new')
             self.nvim.command('edit {}'.format(todays_note))
 
             self.log_to_file(str(self.nvim.current.buffer.number))
@@ -76,7 +76,7 @@ class NotePlugin(object):
             self.close_note()
         else:
             self.nvim.command('setlocal splitright')
-            self.nvim.command('vsplit')
+            self.nvim.command('vertical botright new')
             self.nvim.command('e {}'.format(self.notes_dir))
 
             self.log_to_file(str(self.nvim.current.buffer.number))
