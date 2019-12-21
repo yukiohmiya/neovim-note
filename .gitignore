@@ -1,0 +1,10 @@
+__pycache__
+db.sqlite3
+.python-version
+.venv.nosync/
+.autoenv.zsh
+.autoenv_leave.zsh
+ghostdriver.log
+geckodriver.log
+.coverage
+htmlcov/
